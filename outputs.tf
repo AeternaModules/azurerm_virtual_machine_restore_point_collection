@@ -1,3 +1,7 @@
+output "virtual_machine_restore_point_collections_id" {
+  description = "Map of id values across all virtual_machine_restore_point_collections, keyed the same as var.virtual_machine_restore_point_collections"
+  value       = { for k, v in azurerm_virtual_machine_restore_point_collection.virtual_machine_restore_point_collections : k => v.id }
+}
 output "virtual_machine_restore_point_collections_location" {
   description = "Map of location values across all virtual_machine_restore_point_collections, keyed the same as var.virtual_machine_restore_point_collections"
   value       = { for k, v in azurerm_virtual_machine_restore_point_collection.virtual_machine_restore_point_collections : k => v.location }
